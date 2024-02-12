@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.redvpn.android.model.ObservableTunnel" />
+
+        <variable
+            name="fragment"
+            type="com.redvpn.android.fragment.TunnelListFragment" />
+
+        <variable
+            name="rowConfigurationHandler"
+            type="com.redvpn.android.databinding.ObservableKeyedRecyclerViewAdapter.RowConfigurationHandler" />
+
+        <variable
+            name="tunnels"
+            type="com.redvpn.android.util.ObservableKeyedList&lt;String, ObservableTunnel&gt;" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tunnel_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:visibility="@{tunnels.size() > 0 ? android.view.View.VISIBLE : android.view.View.GONE}"
+            app:configurationHandler="@{rowConfigurationHandler}"
+            app:items="@{tunnels}"
+            app:layout="@{@layout/tunnel_list_item}"/>
+
+        <!--        <include layout="@layout/bottom_sheet_layout" />-->
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

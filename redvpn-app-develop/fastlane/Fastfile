@@ -1,0 +1,44 @@
+fastlane_version '2.53.1'
+
+fastlane_require 'dotenv'
+
+before_all do
+  Dotenv.overload '.env.secret'
+  # Configure incoming webhooks in apps: https://prominentedge.slack.com/apps/A0F7XDUAZ-incoming-webhooks
+  ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
+end
+
+platform :android do
+  desc "Upload the APK to Slack channel"
+    private_lane :upload_to_slack do |options|
+      file_path = lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]
+      file_name = file_path.gsub(/\/.*\//,"")
+      sh "echo Uploading " + file_name + " to Slack"
+      token = "xoxb-1003535272674-2991417014647-Xp2e6Yc3FyAtoYJ7s3PkRyOk"
+      sh "curl https://slack.com/api/files.upload -F token=\"" + token + "\" -F channels=\"#redvpn\" -F title=\"" + file_name + "\" -F filename=\"" + file_name + "\" -F file=@" + file_path
+    end
+
+  private_lane :build do
+    gradle(task: 'clean', project_dir: 'android/')
+
+    gradle(
+      task: "assemble",
+      build_type: "Release",
+      project_dir: "android/",
+      print_command: false,
+      properties: {
+        "android.injected.signing.store.file" => "red-vpn.keystore",
+        "android.injected.signing.store.password" => "zk!R+R2<Ky[Z2XLf",
+        "android.injected.signing.key.alias" => "red-vpn-keystore",
+        "android.injected.signing.key.password" => "zk!R+R2<Ky[Z2XLf",
+      }
+    )
+  end
+
+  desc "Build Release APK"
+    lane :apk do
+      build
+      slack(message: "Build Successful!")
+      upload_to_slack()
+    end
+end

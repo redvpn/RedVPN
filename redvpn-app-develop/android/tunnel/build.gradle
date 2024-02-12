@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdk 33
+    ndkVersion '21.4.7075529'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    namespace 'com.redvpn.android.tunnel'
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 33
+    }
+    externalNativeBuild {
+        cmake {
+            path 'tools/CMakeLists.txt'
+        }
+    }
+}
+
+dependencies {
+    api "net.sourceforge.streamsupport:android-retrofuture:$streamsupportVersion"
+    api "net.sourceforge.streamsupport:android-retrostreams:$streamsupportVersion"
+    implementation "androidx.annotation:annotation:$annotationsVersion"
+    implementation "androidx.collection:collection:$collectionVersion"
+    implementation "com.google.code.findbugs:jsr305:$jsr305Version"
+    implementation "com.jakewharton.threetenabp:threetenabp:$threetenabpVersion"
+    implementation "net.i2p.crypto:eddsa:$eddsaVersion"
+}

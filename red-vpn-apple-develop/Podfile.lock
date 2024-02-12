@@ -1,0 +1,36 @@
+PODS:
+  - KYDrawerController (2.1.0)
+  - Sentry (8.5.0):
+    - Sentry/Core (= 8.5.0)
+    - SentryPrivate (= 8.5.0)
+  - Sentry/Core (8.5.0):
+    - SentryPrivate (= 8.5.0)
+  - SentryPrivate (8.5.0)
+
+DEPENDENCIES:
+  - KYDrawerController
+  - Sentry (from `https://github.com/getsentry/sentry-cocoa.git`, tag `8.5.0`)
+
+SPEC REPOS:
+  trunk:
+    - KYDrawerController
+    - SentryPrivate
+
+EXTERNAL SOURCES:
+  Sentry:
+    :git: https://github.com/getsentry/sentry-cocoa.git
+    :tag: 8.5.0
+
+CHECKOUT OPTIONS:
+  Sentry:
+    :git: https://github.com/getsentry/sentry-cocoa.git
+    :tag: 8.5.0
+
+SPEC CHECKSUMS:
+  KYDrawerController: baad0e63b09c0cb564bd48f0f7f70f45d9176ebc
+  Sentry: 3be3f42e40e5a552935552e115744d5810a216d9
+  SentryPrivate: 8c9463280e282527f938d1a5d1d60f8e10ff279b
+
+PODFILE CHECKSUM: e778bb24a1138ec21412e6193a0476017585ae51
+
+COCOAPODS: 1.12.1

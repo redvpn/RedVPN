@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:showIn="@layout/main_activity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/subpage_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:theme="@style/SubpageActionBarOverlay"
+        app:titleTextAppearance="@style/SubpageHeaderTextStyle"
+        app:contentInsetStartWithNavigation="0dp"
+        app:titleMarginStart="0dp"
+    />
+</FrameLayout>

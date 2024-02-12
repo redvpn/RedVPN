@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Globe_dot_pattern" translatesAutoresizingMaskIntoConstraints="NO" id="LUd-F9-Z3A">
+                                <rect key="frame" x="0.0" y="40" width="414" height="822"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redVpnLogo" translatesAutoresizingMaskIntoConstraints="NO" id="e86-rE-zuk">
+                                <rect key="frame" x="125" y="355.5" width="164" height="185"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="185" id="8d5-Wk-O7Q"/>
+                                    <constraint firstAttribute="width" constant="164" id="VSt-Xl-TLT"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
+                        <color key="backgroundColor" red="0.118523322" green="0.118523322" blue="0.118523322" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LUd-F9-Z3A" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="DOr-p2-Iio"/>
+                            <constraint firstItem="e86-rE-zuk" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="PlD-nt-hDX"/>
+                            <constraint firstItem="e86-rE-zuk" firstAttribute="centerX" secondItem="LUd-F9-Z3A" secondAttribute="centerX" id="aIA-X8-n1w"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="LUd-F9-Z3A" secondAttribute="trailing" id="ghc-p3-9iV"/>
+                            <constraint firstItem="LUd-F9-Z3A" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" id="gwe-Je-sQJ"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="LUd-F9-Z3A" secondAttribute="bottom" id="vgY-m9-s5I"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Globe_dot_pattern" width="125" height="222"/>
+        <image name="redVpnLogo" width="123" height="139"/>
+    </resources>
+</document>

@@ -1,0 +1,6 @@
+buildscript {
+    ext {
+        redVpnVersionCode = 15
+        redVpnVersionName = '1.2.0'
+    }
+}

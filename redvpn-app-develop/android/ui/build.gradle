@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+
+// Create a variable called keystorePropertiesFile, and initialize it to your
+// keystore.properties file, in the rootProject folder.
+final def keystorePropertiesFile = rootProject.file("keystore.properties")
+
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    compileSdk 33
+    ndkVersion '21.4.7075529'
+    buildFeatures {
+        dataBinding true
+    }
+    namespace 'com.redvpn.android'
+    defaultConfig {
+        applicationId 'com.redvpn.android'
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode redVpnVersionCode
+        versionName redVpnVersionName
+        buildConfigField 'int', 'MIN_SDK_VERSION', "$minSdkVersion.apiLevel"
+    }
+    // If the keystore file exists
+    if (keystorePropertiesFile.exists()) {
+        // Initialize a new Properties() object called keystoreProperties.
+        final def keystoreProperties = new Properties()
+
+        // Load your keystore.properties file into the keystoreProperties object.
+        keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+        signingConfigs {
+            release {
+                keyAlias keystoreProperties['keyAlias']
+                keyPassword keystoreProperties['keyPassword']
+                storeFile file(keystoreProperties['storeFile'])
+                storePassword keystoreProperties['storePassword']
+            }
+        }
+    }
+    buildTypes {
+        release {
+            if (keystorePropertiesFile.exists()) signingConfig signingConfigs.release
+            externalNativeBuild {
+                cmake {
+                    arguments "-DANDROID_PACKAGE_NAME=${android.defaultConfig.applicationId}"
+                }
+            }
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+        debug {
+            debuggable true
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+            externalNativeBuild {
+                cmake {
+                    arguments "-DANDROID_PACKAGE_NAME=${android.defaultConfig.applicationId}${applicationIdSuffix}"
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation project(":tunnel")
+    implementation "androidx.annotation:annotation:$annotationsVersion"
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "androidx.cardview:cardview:$cardviewVersion"
+    implementation "androidx.databinding:databinding-runtime:$appVersion"
+    implementation "androidx.preference:preference:$preferenceVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifeCycleExtenstionsVersion"
+    implementation "com.google.android.material:material:$materialComponentsVersion"
+    implementation "com.android.volley:volley:$volleyVersion"
+    implementation "androidx.legacy:legacy-support-v4:$legacySupportVersion"
+    implementation "com.google.android.gms:play-services-base:$googlePlayServicesVersion"
+    implementation "io.sentry:sentry-android:$sentryVersion"
+    implementation "org.slf4j:slf4j-nop:$slf4jVersion"
+    implementation "com.github.barteksc:android-pdf-viewer:$pdfViewerVersion"
+    implementation "com.opencsv:opencsv:$openCsvVersion"
+    implementation "androidx.tonyodev.fetch2:xfetch2:$fetchVersion"
+    implementation "androidx.viewpager:viewpager:$viewPagerVersion"
+    implementation "io.github.muddz:styleabletoast:$stylabletoastVersion"
+    implementation "androidx.core:core-splashscreen:$splashscreenVersion"
+    implementation "com.android.billingclient:billing:$billingVersion"
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << '-Xlint:unchecked'
+    options.deprecation = true
+}
+
+configurations {
+    all {
+        exclude module: 'commons-logging'
+    }
+}

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="SubpageActionBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">@color/dark_base</item>
+        <item name="android:tint">@color/dark_base</item>
+    </style>
+
+    <style name="SubpageHeaderTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColorPrimary">@color/dark_base</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="lineHeight">36sp</item>
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+    <style name="NavigationDrawer" parent="AppTheme">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="lineHeight">24dp</item>
+        <item name="listPreferredItemHeightSmall">72dp</item>
+        <item name="android:colorControlHighlight">@android:color/transparent</item>
+        <item name="listPreferredItemPaddingLeft">12dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="NoBackgroundTheme" parent="AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="Toast">
+        <item name="stFont">@font/poppins_regular</item>
+        <item name="stTextSize">14sp</item>
+        <item name="stSolidBackground">true</item>
+        <item name="stStrokeWidth">1dp</item>
+        <item name="stGravity">top</item>
+        <item name="stRadius">12dp</item>
+        <item name="stTextColor">@color/white</item>
+    </style>
+
+    <style name="ToastSuccess" parent="Toast">
+        <item name="stColorBackground">@color/success_1</item>
+        <item name="stStrokeColor">@color/success_1</item>
+        <item name="stIconStart">@drawable/ic_toast_success</item>
+        <item name="stIconEnd">@drawable/ic_toast_close</item>
+    </style>
+
+    <style name="ToastError" parent="Toast">
+        <item name="stColorBackground">@color/danger</item>
+        <item name="stStrokeColor">@color/danger</item>
+        <item name="stIconStart">@drawable/ic_toast_error</item>
+        <item name="stIconEnd">@drawable/ic_toast_close</item>
+    </style>
+
+    <style name="ToastInfo" parent="Toast">
+        <item name="stColorBackground">@color/interactive_1</item>
+        <item name="stStrokeColor">@color/interactive_1</item>
+        <item name="stIconStart">@drawable/ic_toast_success</item>
+        <item name="stIconEnd">@drawable/ic_toast_close</item>
+    </style>
+
+    <style name="ToastWarning" parent="Toast">
+        <item name="stColorBackground">@color/warning_1</item>
+        <item name="stStrokeColor">@color/warning_1</item>
+        <item name="stIconStart">@drawable/ic_toast_info</item>
+        <item name="stIconEnd">@drawable/ic_toast_close</item>
+    </style>
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_splash_screen_foreground</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/AppTheme</item>
+    </style>
+</resources>

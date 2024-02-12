@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="small_redvpn_image_width">125dp</dimen>
+    <dimen name="small_redvpn_image_height">200dp</dimen>
+    <dimen name="small_next_button_margin">20dp</dimen>
+    <dimen name="small_section_image_top_margin">50dp</dimen>
+    <dimen name="small_section_image_bottom_margin">20dp</dimen>
+    <dimen name="radio_button_top_padding">19dp</dimen>
+    <dimen name="radio_button_bottom_padding">16dp</dimen>
+    <dimen name="radio_button_drawable_padding">17dp</dimen>
+</resources>

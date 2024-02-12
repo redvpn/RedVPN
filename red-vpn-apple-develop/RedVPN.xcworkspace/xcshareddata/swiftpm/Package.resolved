@@ -1,0 +1,50 @@
+{
+  "pins" : [
+    {
+      "identity" : "acknowlist",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vtourraine/AcknowList",
+      "state" : {
+        "revision" : "3112d51bc9dfccba25fa16673729e426a7c43b87",
+        "version" : "1.9.5"
+      }
+    },
+    {
+      "identity" : "connectivity",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rwbutler/Connectivity",
+      "state" : {
+        "revision" : "d5ba3725634e2afd6c8fc1029cc47c885394ff0b",
+        "version" : "6.0.0"
+      }
+    },
+    {
+      "identity" : "fittedsheets",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/gordontucker/FittedSheets",
+      "state" : {
+        "revision" : "3dcebb20ff42f644e9474a198acb886d4bd51793",
+        "version" : "2.5.3"
+      }
+    },
+    {
+      "identity" : "swiftcsv",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftcsv/SwiftCSV",
+      "state" : {
+        "revision" : "96fa14b92e88e0befdbc8bc31c7c2c9594a30060",
+        "version" : "0.8.1"
+      }
+    },
+    {
+      "identity" : "swiftmessages",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftKickMobile/SwiftMessages",
+      "state" : {
+        "revision" : "b29dd21090b708aa0ae9ecbaf6e2d0487028dc3f",
+        "version" : "9.0.6"
+      }
+    }
+  ],
+  "version" : 2
+}

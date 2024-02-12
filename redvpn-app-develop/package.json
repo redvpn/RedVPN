@@ -1,0 +1,23 @@
+{
+  "name": "red-vpn",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "husky": "^2.2.0",
+    "prettier": "1.12.0"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": false
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "prettier"
+    }
+  }
+}
